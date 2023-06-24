@@ -2,6 +2,7 @@ import pyrogram, asyncio, random, time, os
 from pyrogram import Client, filters, enums
 from pyrogram.types import *
 from helper.database import add_user
+from imdb import Cinemagoer
 from variables import IMDB_TEMPLATE
 from variables import PICS
 from helper.text import txt
@@ -21,8 +22,9 @@ async def start_message(bot, message):
         await message.reply_photo(photo=random.choice(PICS), caption=txt.STAT.format(message.from_user.mention), reply_markup=button)
     else:
         await message.reply_text(text=txt.STAT.format(message.from_user.mention), reply_markup=button, disable_web_page_preview=True)
-        
-                                              
+
+imdb = Cinemagoer() 
+
 @Client.on_message(filters.command(["id", "info"]))
 async def media_info(bot, m): 
     message = m
