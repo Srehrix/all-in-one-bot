@@ -160,3 +160,8 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
     sts = await message.reply("Checking template")
+if len(message.command) < 2:
+        return await sts.edit("No Input!!")
+    template = message.text.split(" ", 1)[1]
+    await save_group_settings(grp_id, 'template', template)
+    await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
