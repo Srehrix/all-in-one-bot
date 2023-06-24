@@ -8,4 +8,5 @@ git+https://github.com/cinemagoer/cinemagoer
 aiofiles
 ffmpeg-python
 ffmpeg
+aiohttp
 aiohttp==3.7.4
