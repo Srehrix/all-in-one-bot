@@ -104,6 +104,7 @@ async def nxt_fonts_nxt(c, m: CallbackQuery):
             InlineKeyboardButton('ዪሀክቿነ', callback_data='style+qvnes'),
             InlineKeyboardButton('S̶t̶r̶i̶k̶e̶', callback_data='style+strike'),
             InlineKeyboardButton('F༙r༙o༙z༙e༙n༙', callback_data='style+frozen')
+            InlineKeyboardButton('Bebas Neue', callback_data='style+bebas_neue')
             ],[
             InlineKeyboardButton('⬅️ Back', callback_data='fontblack')
         ]]        
@@ -189,6 +190,8 @@ async def style_btn_editz(c, m, style):
         cls = Fonts.strike
     if style == 'frozen':
         cls = Fonts.frozen 
+    if style == 'bebas_neue':
+        cls = Fonts.bebas_neue
     r, oldtxt = m.message.reply_to_message.text.split(None, 1) 
     new_text = cls(oldtxt)            
     try:
