@@ -4,4 +4,8 @@ telethon
 youtube-search
 youtube-search-python
 yt-dlp
-
+git+https://github.com/cinemagoer/cinemagoer
+aiofiles
+ffmpeg-python
+ffmpeg
+aiohttp==3.7.4
